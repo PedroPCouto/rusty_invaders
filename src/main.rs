@@ -12,7 +12,7 @@ use std::{
     {io, thread},
 };
 
-use invaders::{
+use invader_project::{
     frame::{self, new_frame, Drawable, Frame},
     invaders::Invaders,
     level::Level,
@@ -41,7 +41,7 @@ fn reset_game(in_menu: &mut bool, player: &mut Player, invaders: &mut Invaders) 
 fn main() -> Result<(), Box<dyn Error>> {
     let mut audio = Audio::new();
     for item in &["explode", "lose", "move", "pew", "startup", "win"] {
-        audio.add(item, &format!("audio/original/{}.wav", item));
+        audio.add(item, &format!("sounds/{}.wav", item));
     }
     audio.play("startup");
 
